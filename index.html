@@ -207,55 +207,100 @@
     </script>
 
     <section id="publications" class="py-20 max-w-5xl mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-10"><span class="text-primary">Selected</span> Publications</h2>
-        <div class="space-y-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+            <h2 class="text-3xl font-bold"><span class="text-primary">Selected</span> Publications</h2>
             
-            <div class="group relative pl-8 border-l-2 border-slate-700 hover:border-primary transition">
-                <h3 class="text-xl font-semibold group-hover:text-primary transition">Causal Concept Graph Models: Beyond Causal Opacity in Deep Learning</h3>
-                <div class="text-sm text-slate-400 mt-1">
-                    <span class="text-white bg-slate-700 px-2 py-0.5 rounded text-xs mr-2">ICLR 2025</span>
-                    Gabriele Dominici, et al.
-                </div>
-                <p class="mt-3 text-slate-300 text-sm leading-relaxed">
-                    Proposed a concept-based model ensuring causal transparency by design. Achieved up to 20% improvement in intervention accuracy compared to state-of-the-art models.
-                </p>
+            <div class="flex items-center gap-4 text-xs">
+                <span class="text-slate-400 flex items-center gap-1">
+                    <span class="text-primary text-lg leading-none">*</span> Equal Contribution
+                </span>
+                <span class="font-mono text-slate-500 border border-slate-700 px-2 py-1 rounded">Sorted by Relevance</span>
             </div>
-
-            <div class="group relative pl-8 border-l-2 border-slate-700 hover:border-primary transition">
-                <h3 class="text-xl font-semibold group-hover:text-primary transition">Counterfactual Concept Bottleneck Models</h3>
-                <div class="text-sm text-slate-400 mt-1">
-                    <span class="text-white bg-slate-700 px-2 py-0.5 rounded text-xs mr-2">ICLR 2025</span>
-                    Gabriele Dominici, et al.
-                </div>
-                <p class="mt-3 text-slate-300 text-sm leading-relaxed">
-                    Integrated counterfactual generation into Concept-Bottleneck Models for end-to-end prediction without post-hoc methods. Outperformed baselines by 12% in accuracy.
-                </p>
-            </div>
-
-            <div class="group relative pl-8 border-l-2 border-slate-700 hover:border-primary transition">
-                <h3 class="text-xl font-semibold group-hover:text-primary transition">Federated Behavioural Planes</h3>
-                <div class="text-sm text-slate-400 mt-1">
-                    <span class="text-white bg-slate-700 px-2 py-0.5 rounded text-xs mr-2">NeurIPS 2024</span>
-                    Dario Fenoglio, et al.
-                </div>
-                <p class="mt-3 text-slate-300 text-sm leading-relaxed">
-                    Exploited counterfactual information to understand model behaviors in federated learning. Proposed a secure aggregation method improving accuracy by 30% in adversarial scenarios.
-                </p>
-            </div>
-            
-             <div class="group relative pl-8 border-l-2 border-slate-700 hover:border-primary transition">
-                <h3 class="text-xl font-semibold group-hover:text-primary transition">SHARCS: Interpretable Multimodal Learning</h3>
-                <div class="text-sm text-slate-400 mt-1">
-                    <span class="text-white bg-slate-700 px-2 py-0.5 rounded text-xs mr-2">NeurIPS 2023 Workshop</span>
-                    Gabriele Dominici, et al.
-                </div>
-                <p class="mt-3 text-slate-300 text-sm leading-relaxed">
-                    Proposed a model for cross-modality concept discovery and explanations.
-                </p>
-            </div>
-
         </div>
+        <div id="selected-container" class="space-y-8">
+            </div>
+
+        <div id="more-publications" class="hidden space-y-8 mt-8 pt-8 border-t border-dashed border-slate-800">
+            </div>
+
+        <div class="mt-12 text-center">
+            <button onclick="togglePublications()" id="toggle-btn" class="group px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-full transition-all duration-300 flex items-center gap-2 mx-auto">
+                <span>Show All Publications</span>
+                <i class="fas fa-chevron-down group-hover:translate-y-1 transition-transform"></i>
+            </button>
+        </div>
+
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('publications.json')
+                .then(response => response.json())
+                .then(papers => {
+                    const selectedContainer = document.getElementById('selected-container');
+                    const moreContainer = document.getElementById('more-publications');
+
+                    papers.forEach(paper => {
+                        const card = createPaperCard(paper);
+                        if (paper.selected) {
+                            selectedContainer.innerHTML += card;
+                        } else {
+                            moreContainer.innerHTML += card;
+                        }
+                    });
+                })
+                .catch(error => console.error('Error loading publications:', error));
+        });
+
+        function createPaperCard(paper) {
+            // If selected: Blue border, blue dot, glowing text. 
+            // If not: Gray border, no dot.
+            if (paper.selected) {
+                return `
+                <div class="group relative pl-8 border-l-2 border-primary bg-slate-800/20 p-4 rounded-r-xl transition hover:bg-slate-800/40">
+                    <div class="absolute -left-[9px] top-6 w-4 h-4 bg-primary rounded-full border-4 border-slate-900"></div>
+                    <h3 class="text-xl font-semibold text-white group-hover:text-primary transition">${paper.title}</h3>
+                    <div class="text-sm text-slate-400 mt-1">
+                        <span class="text-white bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 rounded text-xs mr-2">${paper.venue}</span>
+                        ${paper.authors}
+                    </div>
+                    <p class="mt-3 text-slate-300 text-sm leading-relaxed">${paper.description}</p>
+                </div>`;
+            } else {
+                return `
+                <div class="group relative pl-8 border-l-2 border-slate-700 hover:border-slate-500 transition">
+                    <h3 class="text-xl font-semibold group-hover:text-slate-200 transition">${paper.title}</h3>
+                    <div class="text-sm text-slate-400 mt-1">
+                        <span class="text-white bg-slate-700 px-2 py-0.5 rounded text-xs mr-2">${paper.venue}</span>
+                        ${paper.authors}
+                    </div>
+                    <p class="mt-3 text-slate-300 text-sm leading-relaxed">${paper.description}</p>
+                </div>`;
+            }
+        }
+
+        function togglePublications() {
+            const moreSection = document.getElementById('more-publications');
+            const btn = document.getElementById('toggle-btn');
+            const btnText = btn.querySelector('span');
+            const btnIcon = btn.querySelector('i');
+
+            if (moreSection.classList.contains('hidden')) {
+                moreSection.classList.remove('hidden');
+                moreSection.classList.add('block', 'animate-fade-in-down');
+                btnText.innerText = "Show Less";
+                btnIcon.classList.remove('fa-chevron-down');
+                btnIcon.classList.add('fa-chevron-up');
+            } else {
+                moreSection.classList.add('hidden');
+                moreSection.classList.remove('block', 'animate-fade-in-down');
+                btnText.innerText = "Show All Publications";
+                btnIcon.classList.remove('fa-chevron-up');
+                btnIcon.classList.add('fa-chevron-down');
+                btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    </script>
 
     <section id="experience" class="py-20 bg-slate-800/30">
         <div class="max-w-5xl mx-auto px-6">
