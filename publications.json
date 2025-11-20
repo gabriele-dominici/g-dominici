@@ -18,7 +18,7 @@
         "venue": "NeurIPS 2025 Workshop (Evaluating the Evolving LLM Lifecycle)",
         "authors": "T. McMillan*, G. Dominici*, M. Gjoreski, M. Langheinrich",
         "description": "Investigated how inference and training choices shape LLM explanation faithfulness. Found that few-shot examples and prompting strategies significantly impact faithfulness.",
-        "selected": false
+        "selected": true
     },
     {
         "title": "Deferring Concept Bottleneck Models: Learning to Defer Interventions",
@@ -75,12 +75,12 @@
         "authors": "G. Dominici, P. Barbiero, L. C. Magister, P. Liò, N. Simidjievski",
         "description": "Introduced a novel concept-based approach for explainable multimodal learning, mapping heterogeneous modalities into a unified concept-manifold.",
         "selected": false
-    }
+    },
     {
         "title": "DC3DO: Diffusion Classifier for 3D Objects",
         "venue": "MIT SGI 2023",
         "authors": "Nursena Koprucu, ..., G. Dominici, et al.",
         "description": "Enabled zero-shot classification of 3D shapes using density estimates from 3D diffusion models. Achieved 12.5% improvement over multiview counterparts.",
         "selected": false
-    },
+    }
 ]
