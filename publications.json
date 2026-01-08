@@ -1,0 +1,86 @@
+[
+    {
+        "title": "Is General-Purpose AI Reasoning Sensitive to Data-Induced Cognitive Biases?",
+        "venue": "Under Review",
+        "authors": "F. Sovrano, G. Dominici, R. Sevastjanova, A. Stramiglio, A. Bacchelli",
+        "description": "The first dynamic benchmarking framework to evaluate data-induced cognitive biases in LLMs. Evaluated GPT, LLaMA, and DeepSeek, finding a consistent tendency to rely on shallow linguistic bias and proposed a way to overcome it.",
+        "selected": false
+    },
+    {
+        "title": "Interpretable Hierarchical Concept Reasoning through Attention-Guided Graph Learning",
+        "venue": "Under Review",
+        "authors": "D. Debot, P. Barbiero, G. Dominici, G. Marra",
+        "description": "Proposed H-CMR, a model that provides interpretability for both concept and task predictions using a learned directed acyclic graph and neural attention mechanisms.",
+        "selected": false
+    },
+    {
+        "title": "Towards Transparent Reasoning: What Drives Faithfulness in LLMs?",
+        "venue": "NeurIPS 2025 Workshop (Evaluating the Evolving LLM Lifecycle)",
+        "authors": "T. McMillan*, G. Dominici*, M. Gjoreski, M. Langheinrich",
+        "description": "Investigated how inference and training choices shape LLM explanation faithfulness. Found that few-shot examples and prompting strategies significantly impact faithfulness.",
+        "selected": true
+    },
+    {
+        "title": "Deferring Concept Bottleneck Models: Learning to Defer Interventions",
+        "venue": "NeurIPS 2025",
+        "authors": "A. Pugnana, R. Massidda, ..., G. Dominici, et al.",
+        "description": "Proposed Deferring CBMs (DCBMs), allowing models to identify cases where a human intervention is needed, optimizing labor costs and reducing error.",
+        "selected": false
+    },
+    {
+        "title": "Avoiding Leakage Poisoning: Concept Interventions Under Distribution Shifts",
+        "venue": "ICML 2025",
+        "authors": "M. E. Zarlenga, G. Dominici, P. Barbiero, Z. Shams, M. Jamnik",
+        "description": "Reveals a weakness in Concept Models termed 'leakage poisoning'. Proposed MixCEM to dynamically exploit leaked information only when in-distribution, significantly improving accuracy on OOD samples.",
+        "selected": false
+    },
+    {
+        "title": "Causal Concept Graph Models: Beyond Causal Opacity in Deep Learning",
+        "venue": "ICLR 2025",
+        "authors": "G. Dominici*, P. Barbiero* et al.",
+        "description": "Addresses causal opacity by introducing Causal Concept Graph Models (Causal CGMs). These models are causally transparent (explicit the causal graph they have learned and are using) by design, matching opaque model performance, and enabling effective human-in-the-loop corrections and counterfactual analysis.",
+        "selected": true
+    },
+    {
+        "title": "Counterfactual Concept Bottleneck Models",
+        "venue": "ICLR 2025",
+        "authors": "G. Dominici, et al.",
+        "description": "Integrated counterfactual generation into Concept-Bottleneck Models, building a counterfactual aware model that is able to perform prediction, intervention, and counterfactual generation without post-hoc methods. These models provide interpretable counterfactuals and simpler explanations without post-hoc searches, while maintaining competitive accuracy.",
+        "selected": true
+    },
+    {
+        "title": "Federated Behavioural Planes",
+        "venue": "NeurIPS 2024",
+        "authors": "D. Fenoglio*, G. Dominici*, et al.",
+        "description": "Exploited the information given by counterfactual to understand the behaviours of different models during a federated learning training. Proposed also a secure aggregation method, achieving up to 30% accuracy improvement in adversarial scenarios.",
+        "selected": true
+    },
+    {
+        "title": "Evaluating Explanations Through LLMs: Beyond Traditional User Studies",
+        "venue": "NeurIPS 2024 Workshop (GenAI for Health)",
+        "authors": "F. Bombassei De Bona, G. Dominici, T. Miller, M. Langheinrich, M. Gjoreski",
+        "description": "Explored using LLMs to replicate human participants for XAI evaluation. Found that LLMs can replicate most conclusions from original user studies, offering a scalable evaluation method.",
+        "selected": false
+    },
+    {
+        "title": "AnyCBMs: How to Turn Any Black Box into a Concept Bottleneck Model",
+        "venue": "XAI World Conference 2024 (CEUR Workshop)",
+        "authors": "G. Dominici, P. Barbiero, F. Giannini, M. Gjoreski, M. Langhenirich",
+        "description": "Introduced a method to transform any existing trained model into a Concept Bottleneck Model with minimal impact on performace, but introducing interpretability.",
+        "selected": false
+    },
+    {
+        "title": "SHARCS: Shared Concept Space for Explainable Multimodal Learning",
+        "venue": "NeurIPS 2023 Workshop (UniReps)",
+        "authors": "G. Dominici, P. Barbiero, L. C. Magister, P. Liò, N. Simidjievski",
+        "description": "Introduced a novel concept-based approach for explainable multimodal learning, mapping heterogeneous modalities into a unified concept-manifold.",
+        "selected": false
+    },
+    {
+        "title": "DC3DO: Diffusion Classifier for 3D Objects",
+        "venue": "MIT SGI 2023",
+        "authors": "Nursena Koprucu, ..., G. Dominici, et al.",
+        "description": "Enabled zero-shot classification of 3D shapes using density estimates from 3D diffusion models. Achieved 12.5% improvement over multiview counterparts.",
+        "selected": false
+    }
+]
