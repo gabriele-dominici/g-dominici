@@ -303,7 +303,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            fetch('publications.json')
+            fetch('publications.json', { cache: 'no-cache' })
                 .then(response => response.json())
                 .then(papers => {
                     const selectedContainer = document.getElementById('selected-container');
@@ -401,11 +401,12 @@
                                 <span class="text-xs text-slate-400">Mar 2026</span>
                             </div>
                             <p class="text-primary text-sm">University of Oxford</p>
-                            <p class="text-sm text-slate-400 mt-2">Visiting researcher at the <a
+                            <p class="text-sm text-slate-400 mt-2">Research visit at the <a
                                     href="https://tsglab.github.io/" class="text-primary" target="_blank"
-                                    rel="noopener noreferrer">TSG Lab</a>, led by <a href="https://fazlbarez.com/"
+                                    rel="noopener noreferrer">TSG Lab</a>, hosted by <a href="https://fazlbarez.com/"
                                     class="text-primary" target="_blank" rel="noopener noreferrer">Dr. Fazl
-                                    Barez</a>.</p>
+                                    Barez</a>. Worked on automated interpretability, building methods that use AI
+                                to explain the inner workings of other AI models at scale.</p>
                         </div>
 
                         <div>
@@ -466,8 +467,9 @@
                                 <span class="text-xs text-slate-400">Jun - Oct 2026</span>
                             </div>
                             <p class="text-primary text-sm">Meta</p>
-                            <p class="text-sm text-slate-400 mt-2">Core Ads Quality. Worked on a world model for user
-                                behaviour.</p>
+                            <p class="text-sm text-slate-400 mt-2">Core Ads Quality team. Developed a world model of
+                                user behaviour, learning to simulate how users interact with content to improve ads
+                                quality.</p>
                         </div>
 
                         <div>
