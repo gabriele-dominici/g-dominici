@@ -1,9 +1,37 @@
 [
     {
-        "title": "Is General-Purpose AI Reasoning Sensitive to Data-Induced Cognitive Biases?",
-        "venue": "Under Review",
-        "authors": "F. Sovrano, G. Dominici, R. Sevastjanova, A. Stramiglio, A. Bacchelli",
-        "description": "The first dynamic benchmarking framework to evaluate data-induced cognitive biases in LLMs. Evaluated GPT, LLaMA, and DeepSeek, finding a consistent tendency to rely on shallow linguistic bias and proposed a way to overcome it.",
+        "title": "Causal Chain of Thought: Mitigating Attention Leakage via Context Isolation",
+        "venue": "NeurIPS 2026 Workshop (Interpretability as a Science) & Under Review",
+        "authors": "G. Dominici, T. McMillan, F. Barez, M. Langheinrich, M. Gjoreski",
+        "description": "Proposed CausalCoT, which decomposes a problem into a DAG of atomic sub-questions, each answered seeing only its causal parents. This removes attention leakage to unrelated context, making intermediate reasoning steps more causally relevant (+12 points on average over the strongest baseline) while keeping competitive accuracy and enabling test-time interventions.",
+        "selected": true
+    },
+    {
+        "title": "Distributed Subliminal Learning: Replacing Model Updates with Random-Carrier Outputs",
+        "venue": "NeurIPS 2026 Workshop (Collaborative, Open, and Decentralized Training of Foundation Models)",
+        "authors": "D. Fenoglio, G. Dominici, M. Gjoreski, M. Langheinrich",
+        "description": "Introduced a collaborative learning method where participants share only the outputs of their locally adapted models on task-unrelated inputs, which are then distilled into a shared model. Outperformed LoRA averaging for LLM composition and matched FedAvg on federated classification with lower communication cost.",
+        "selected": false
+    },
+    {
+        "title": "Federated Concept-Based Models: Interpretable Models with Distributed Supervision",
+        "venue": "NeurIPS 2026",
+        "authors": "D. Fenoglio, A. Casanova, F. De Santis, G. Dominici, et al.",
+        "description": "Proposed F-CMs, which combine concept annotations across institutions and adapt the model architecture as concept supervision changes, while preserving privacy. Achieved accuracy and intervention effectiveness close to fully supervised models and enabled interpretable inference on concepts never annotated locally.",
+        "selected": false
+    },
+    {
+        "title": "Neuron-Anchored Rule Extraction for Large Language Models via Contrastive Hierarchical Ablation",
+        "venue": "KDD 2026",
+        "authors": "F. Sovrano, G. Dominici, M. Langheinrich",
+        "description": "Proposed MechaRule, a pipeline that grounds rule extraction for LLMs in their internal circuits by locating sparse activations whose ablation disrupts rule-related behaviour, using adaptive group testing to keep the number of interventions low.",
+        "selected": false
+    },
+    {
+        "title": "Mitigating Prompt-Induced Cognitive Biases in General-Purpose AI for Software Engineering",
+        "venue": "FSE 2026",
+        "authors": "F. Sovrano, G. Dominici, A. Bacchelli",
+        "description": "Studied whether off-the-shelf prompt engineering techniques reduce the sensitivity of general-purpose AI to prompt-induced cognitive biases, using PROBE-SWE, a benchmark of paired biased and unbiased software engineering dilemmas covering eight biases.",
         "selected": false
     },
     {
